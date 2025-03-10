@@ -7,13 +7,13 @@ from dotenv  import load_dotenv
 load_dotenv()
 import os
 
-#GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
 
-#if not GOOGLE_API_KEY:
-#    raise ValueError("GOOGLEAPIKEY is missing. Please check your .env file")
-#else:
-#    genai.configure(api_key=GOOGLE_API_KEY)
+if not GOOGLE_API_KEY:
+    raise ValueError("GOOGLEAPIKEY is missing. Please check your .env file")
+else:
+    genai.configure(api_key=GOOGLE_API_KEY)
 
 
 #agent = Agent(
