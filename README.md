@@ -10,7 +10,7 @@ This is a multi ai agent.This research search AI agent primarily built using Phi
 - **Google Search Agent**:
   - Retrieves research papers and details from google.
 
--  **Multi ai Agent**:
+- **Multi ai Agent**:
   - This agent created by combining the web_search_agent and google_search_agent both. By using this agent, users can get the web search agent and google search  agent results conclusion.
 
 ## Setup
