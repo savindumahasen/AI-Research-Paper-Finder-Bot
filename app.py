@@ -1,5 +1,5 @@
 from phi.agent import Agent
-from phi.model.google import Gemini
+from phi.model.groq import Groq
 from phi.tools.duckduckgo import DuckDuckGo
 from phi.tools.googlesearch import GoogleSearch
 import google.generativeai as genai
@@ -11,17 +11,17 @@ import streamlit as st
 load_dotenv()
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+#GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
-if not GOOGLE_API_KEY:
-    raise ValueError ("Google API key cannot be found")
-else:
-    genai.configure(api_key=GOOGLE_API_KEY)
+#if not GOOGLE_API_KEY:
+#    raise ValueError ("Google API key cannot be found")
+#else:
+#    genai.configure(api_key=GOOGLE_API_KEY)
 
 # Define the Web Search Agent
 web_search_agent = Agent(
     tools=[DuckDuckGo()],
-    model=Gemini(id="gemini-2.0-flash-exp"),
+    model=Groq(id="Deepseek-R1-Distill-Llama-70b"),
     description="A web search agent that helps users find the latest research papers.",
     instructions=[
         "Given a topic, return 10 latest research papers.",
@@ -36,7 +36,7 @@ web_search_agent = Agent(
 # Define the Google Search Agent
 google_search_agent = Agent(
     tools=[GoogleSearch()],
-    model=Gemini(id="gemini-2.0-flash-exp"),
+    model=Groq(id="Deepseek-R1-Distill-Llama-70b"),
     description="A research agent that helps users find the latest research papers.",
     instructions=[
         "Given a topic, return 10 latest research papers.",
@@ -51,7 +51,7 @@ google_search_agent = Agent(
 # Multi-AI Agent combining both agents
 multi_ai_agent = Agent(
     team=[google_search_agent, web_search_agent],
-    model=Gemini(id="gemini-2.0-flash-exp"),
+    model=Groq(id="Deepseek-R1-Distill-Llama-70b"),
     description="A research agent that helps users find the latest research papers.",
     instructions=[
         "Given a topic, return 10 latest research papers.",
