@@ -3,6 +3,7 @@ from phi.model.groq import Groq
 from phi.tools.duckduckgo import DuckDuckGo
 from dotenv import load_dotenv
 import os
+from phi.tools.googlesearch import GoogleSearch
 import streamlit as st
 
 # Load environment variables
