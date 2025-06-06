@@ -1,8 +1,6 @@
 from phi.agent import Agent
 from phi.model.groq import Groq
 from phi.tools.duckduckgo import DuckDuckGo
-from phi.tools.googlesearch import GoogleSearch
-import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 import streamlit as st
