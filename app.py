@@ -88,7 +88,7 @@ st.title("📚 AI Research Paper Finder")
 st.markdown("### Find the latest research papers in just a few seconds!")
 
 # User input with enhanced design
-topic = st.text_input("🔍 Enter research topic:")
+topic = st.text_input("🔍 Enter research topic and click the the Enter:")
 
 if topic:
     if st.button("🔎 Generate Results"):
